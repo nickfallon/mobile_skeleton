@@ -26,11 +26,11 @@ function bind_mouse(canvas) {
     canvas.addEventListener('click', mouseclick_function, false);
 }
 
-function bind_touch() {
+function bind_touch(canvas) {
     //bind touch events                
-    document.addEventListener('touchstart', touchstart_function, false);
-    document.addEventListener('touchmove', touchmove_function, false);
-    document.addEventListener('touchend', touchend_function, false);
+    canvas.addEventListener('touchstart', touchstart_function, false);
+    canvas.addEventListener('touchmove', touchmove_function, false);
+    canvas.addEventListener('touchend', touchend_function, false);
 }
 
 

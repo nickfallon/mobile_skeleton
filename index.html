@@ -3,10 +3,13 @@
 	<head>
 		<title>skel</title>		
   		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-		<link href="css/style.css" rel="stylesheet" type="text/css">		
+		<link href="css/style.css?v=1" rel="stylesheet" type="text/css">		
 		<script type="text/javascript" src="js/touch.js"></script>
 	</head>
-	<body>
+	<body >
+
+
+
 
 		<canvas id="canvas1"></canvas>
 
@@ -29,7 +32,7 @@
 				ctx = canvas.getContext("2d");
 				resize_window();
 
-				bind_touch();
+				bind_touch(canvas);
 				bind_mouse(canvas);
 
 				//set up animation 
@@ -60,6 +63,8 @@
 			function render() {		
 
 				//draw a point if mouse click or touch
+
+
 
 				if (cursor_down) {
 					ctx.fillStyle = '#ffffff';
