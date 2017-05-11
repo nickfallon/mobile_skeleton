@@ -5,24 +5,21 @@
   		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<link href="css/style.css?v=1" rel="stylesheet" type="text/css">		
 		<script type="text/javascript" src="js/touch.js"></script>
-        <script type="text/javascript" src="js/stats.min.js"></script>
-
+        	<script type="text/javascript" src="js/stats.min.js"></script>
 	</head>
-	<body >
-
-
+	
+	<body>
+		
 		<canvas id="canvas1"></canvas>
-
-
 
 		<script>
 
-	        var canvas;
-	        var ctx;
-	        var canvas_width;
-	        var canvas_height;
-	        var origin_x;
-	        var origin_y;
+			var canvas;
+			var ctx;
+			var canvas_width;
+			var canvas_height;
+			var origin_x;
+			var origin_y;
 
 
 			(function() {
@@ -93,18 +90,16 @@
 				}
 			}
 
-	        window.onresize = resize_window;
-	        function resize_window() {
-	            canvas_width = document.documentElement.clientWidth;
-	            canvas_height = document.documentElement.clientHeight;
-	            origin_x = Math.floor(canvas_width / 2);
-	            origin_y = Math.floor(canvas_height / 2);
-	            canvas.setAttribute("width", canvas_width);
-	            canvas.setAttribute("height", canvas_height);
-	        }
-
+			window.onresize = resize_window;
+			function resize_window() {
+			    canvas_width = document.documentElement.clientWidth;
+			    canvas_height = document.documentElement.clientHeight;
+			    origin_x = Math.floor(canvas_width / 2);
+			    origin_y = Math.floor(canvas_height / 2);
+			    canvas.setAttribute("width", canvas_width);
+			    canvas.setAttribute("height", canvas_height);
+			}
 
 		</script>
-
 	</body>
 </html>
