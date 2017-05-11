@@ -39,7 +39,6 @@
 				stats.showPanel(0); 
 				document.body.appendChild(stats.dom);
 
-
 				//set up animation 
 				window.requestAnimFrame = (function() {
 					return  window.requestAnimationFrame     ||
@@ -67,27 +66,23 @@
 
 			function animate() {
 
-			    
-
 				damp_swipes();
 				handle_swipe_events();
-
 
 			}
 
 			function render() {		
 
-			    //clear canvas
-			    ctx.fillStyle = 'rgba(0,0,0,0.01)';
-			    ctx.fillRect(0, 0, canvas_width, canvas_height);
-
+				//clear canvas
+			 	ctx.fillStyle = 'rgba(0,0,0,0.01)';
+				ctx.fillRect(0, 0, canvas_width, canvas_height);
 
 				//draw a point if mouse click or touch
-
 				if (cursor_down) {
 					ctx.fillStyle = '#ffffff';
 					ctx.fillRect(cursor_x, cursor_y, 5, 5);
 				}
+				
 			}
 
 			window.onresize = resize_window;
