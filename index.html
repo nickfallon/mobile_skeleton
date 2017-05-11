@@ -5,13 +5,15 @@
   		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<link href="css/style.css?v=1" rel="stylesheet" type="text/css">		
 		<script type="text/javascript" src="js/touch.js"></script>
+        <script type="text/javascript" src="js/stats.min.js"></script>
+
 	</head>
 	<body >
 
 
-
-
 		<canvas id="canvas1"></canvas>
+
+
 
 		<script>
 
@@ -21,6 +23,7 @@
 	        var canvas_height;
 	        var origin_x;
 	        var origin_y;
+
 
 			(function() {
 				init();
@@ -35,6 +38,11 @@
 				bind_touch(canvas);
 				bind_mouse(canvas);
 
+				var stats = new Stats();
+				stats.showPanel(0); 
+				document.body.appendChild(stats.dom);
+
+
 				//set up animation 
 				window.requestAnimFrame = (function() {
 					return  window.requestAnimationFrame     ||
@@ -45,26 +53,39 @@
 					      };
 				})();
 
-				(function loop() {
-					requestAnimFrame(loop);
+			    (function loop() {
+
+				    requestAnimFrame(loop);
+
+				    stats.begin();
+
 					animate();
 					render();
+
+					stats.end();
+
 				})();
 
 			}
 
 			function animate() {
 
+			    
+
 				damp_swipes();
 				handle_swipe_events();
+
 
 			}
 
 			function render() {		
 
+			    //clear canvas
+			    ctx.fillStyle = 'rgba(0,0,0,0.01)';
+			    ctx.fillRect(0, 0, canvas_width, canvas_height);
+
+
 				//draw a point if mouse click or touch
-
-
 
 				if (cursor_down) {
 					ctx.fillStyle = '#ffffff';
